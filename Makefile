@@ -4,7 +4,9 @@ NAMESPACE=edu
 NAME=hashicups
 BINARY=terraform-provider-${NAME}
 VERSION=0.3.1
-OS_ARCH=darwin_amd64
+GOHOSTOS=$(shell go env GOHOSTOS)
+GOARCH=$(shell go env GOARCH)
+OS_ARCH=${GOHOSTOS}_${GOARCH}
 
 default: install
 
